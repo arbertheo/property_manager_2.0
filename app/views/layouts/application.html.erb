@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>PropertyManager20</title>
@@ -7,8 +8,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="top-bar">
+     <div class="top-bar-left">
+       <ul class="menu">
+         <li class="menu-text">My Website</li>
+         <li><a href="#">About</a></li>
+       </ul>
+     </div>
+
+     <div class="top-bar-right">
+       <ul class="menu">
+         <li><a href="/users/sign_up">Sign up</a></li>
+         <li><a href="/users/sign_in">Sign In</a></li>
+         <li><a href="/properties">Main Page</a></li>
+         <li><%= button_to "Sign out", destroy_user_session_path,class: "signout", method: :delete %></li>
+       </ul>
+     </div>
+   </div>
 
 <%= yield %>
-
 </body>
 </html>

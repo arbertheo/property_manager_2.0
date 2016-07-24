@@ -1,0 +1,7 @@
+<div>
+    <ul>
+    <% @property.each do |property| %>
+      <li><%= link_to property.address, property %></li>
+    <% end %>
+    </ul>
+</div>

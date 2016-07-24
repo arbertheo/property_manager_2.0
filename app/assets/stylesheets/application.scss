@@ -1,2 +1,17 @@
 // @import "*";
+/*
+*= require foundation.css
+*= require app.css
+*/
 
+body {
+  color: red;
+}
+
+nav {
+  color: blue;
+}
+
+.signin{
+  color: green;
+}

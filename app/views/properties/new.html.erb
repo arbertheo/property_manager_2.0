@@ -1,0 +1,8 @@
+<div class="medium-4 medium-centered">
+    <h6>New property Form</h6>
+    <%= form_for @property do |f| %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <%= f.submit "Add Property" %>
+    <% end %>
+</div>

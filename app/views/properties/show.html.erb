@@ -1,7 +1,12 @@
 <div>
-    <ul>
-    <% @property.each do |property| %>
-      <li><%= link_to property.address, property %></li>
-    <% end %>
-    </ul>
+    <ul><%= @property.address %></ul>
+    <ul><%= @property.unit_id %></ul>
+    <ul><%= @property.rent_amount %></ul>
+    <ul><%= @property.number_of_rooms %></ul>
+    <ul><%= @property.pet_friendly %></ul>
+    <ul><%= @property.occupied_or_not %></ul>
+    <ul><%= @property.rent_deposit %></ul>
+    <ul><%= @property.begining_of_lease_date %></ul>
+    <ul><%= @property.end_of_lease_date %></ul>
 </div>
+show page

@@ -8,7 +8,7 @@ class Property < ActiveRecord::Base
     validates :number_of_rooms, presence: true
     validates :pet_friendly,presence: true
     validates :occupied_or_not, inclusion: { in: [true, false] }
-    validates :rent_deposit, inclusion: { in: [true, false] }
+    validates :rent_deposit, presence: true
     validates :begining_of_lease_date, presence: true
     validates :end_of_lease_date,presence: true
 

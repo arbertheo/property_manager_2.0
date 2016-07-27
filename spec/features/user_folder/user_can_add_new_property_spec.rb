@@ -2,20 +2,30 @@ require "rails_helper"
 require "pry"
 
 feature "user can add property" do
+
+  let(:user) { FactoryGirl.create(:user) }
+  let(:venue) { FactoryGirl.build(:property) }
+
+  before do
+    login_user(user)
+    visit new_property_path
+  end
+
   scenario "visitor adds new property successfully" do
+
 
     visit new_property_path
     expect(page).to have_content "New property Form"
 
     fill_in 'Address', with: "13 Harrison"
-    fill_in 'Unit_id', with: "3"
-    fill_in 'Rent_amount', with: "1000"
-    fill_in 'Number_of_rooms', with: "2"
-    fill_in 'Pet_friendly', with: "false"
-    fill_in 'Occupied_or_not', with: "true"
-    fill_in 'Rent_deposit', with: "500"
-    fill_in 'Begining_of_lease_date', with: "12/23/2014"
-    fill_in 'End_of_lease_date', with: "12/3/2016"
+    fill_in 'Unit', with: "3"
+    fill_in 'Rent amount', with: "1000"
+    fill_in 'Number of rooms', with: "2"
+    fill_in 'Pet friendly', with: "false"
+    fill_in 'Occupied or not', with: "true"
+    fill_in 'Rent deposit', with: "500"
+    fill_in 'Begining of lease date', with: "12/23/2014"
+    fill_in 'End of lease date', with: "12/3/2016"
 
 
 
@@ -35,15 +45,14 @@ feature "user can add property" do
   end
 
   scenario "visitor does not provide proper information for a property" do
-    visit new_restaurant_path
+    visit new_property_path
     click_button "Add Property"
-    expect(page).to have_content "Name can't be blank"
 
     expect(page).to have_content "Address can't be blank"
-    expect(page).to have_content "Unit_id can't be blank"
-    expect(page).to have_content "Rent_amount can't be blank"
-    expect(page).to have_content "Number_of_rooms can't be blank"
-    expect(page).to have_content "Pet_friendly can't be blank"
-    expect(page).to have_content "Occupied_or_not can't be blank"
+    expect(page).to have_content "Unit  can't be blank"
+    expect(page).to have_content "Rent amount can't be blank"
+    expect(page).to have_content "Number of rooms can't be blank"
+    expect(page).to have_content "Occupied or not"
+    expect(page).to have_content "Rent deposit"
   end
 end

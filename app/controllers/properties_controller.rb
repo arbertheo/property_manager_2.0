@@ -2,11 +2,11 @@ class PropertiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @property = Property.all
+    @properties = Property.all
   end
 
   def show
-    @properties = Property.find(params[:id])
+    @property = Property.find(params[:id])
   end
 
 
@@ -30,6 +30,6 @@ end
   private
 
   def property_params
-    params.require(:property).permit(:name, :address, :city, :state, :description, :zip)
+    params.require(:property).permit(:address, :unit_id, :rent_amount, :number_of_rooms, :pet_friendly, :occupied_or_not, :rent_deposit, :begining_of_lease_date, :end_of_lease_date)
   end
 end

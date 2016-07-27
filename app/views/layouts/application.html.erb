@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-
 <html>
+<%= image_tag "" %>
+
 <head>
   <title>PropertyManager20</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
   <div class="top-bar">
      <div class="top-bar-left">
        <ul class="menu">
-         <li class="menu-text">My Website</li>
+         <li class="menu-text">Property Manager 2.0</li>
          <li><a href="#">About</a></li>
        </ul>
      </div>
@@ -26,6 +29,20 @@
      </div>
    </div>
 
+   <% flash.each do |type, message| %>
+     <div class="flash flash-<%= type %>">
+       <%= message %>
+     </div>
+   <% end %>
+
+
 <%= yield %>
+
+<!-- <script src="app/assets/javascripts/jquery.js"></script>
+   <script src="app/asets/javascripts/what-input.min.js"></script>
+   <script src="app/assets/javascripts/foundation.min.js"></script>
+   <script>
+     $(document).foundation();
+   </script> -->
 </body>
 </html>

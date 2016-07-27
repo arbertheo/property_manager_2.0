@@ -1,8 +1,7 @@
-
     <ul>
-    <% @property.each do |property| %>
-      <li><%=  property %></li>
+    <% @properties.each do |property| %>
+      <li><%=  property.address %></li>
     <% end %>
     </ul>
-
-index
+index page
+<%= link_to 'New property Form', new_property_path %>

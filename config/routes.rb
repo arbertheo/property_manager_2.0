@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root "properties#index"
 
-  resources :properties, only: [:index, :show, :create, :new]
+  resources :properties, only: [:index, :show, :create, :new, :edit, :update, :destroy]
 
   resources :users, only:[:index]
 

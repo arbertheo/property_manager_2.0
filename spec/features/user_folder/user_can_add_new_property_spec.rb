@@ -4,7 +4,7 @@ require "pry"
 feature "user can add property" do
 
   let(:user) { FactoryGirl.create(:user) }
-  let(:venue) { FactoryGirl.build(:property) }
+  let(:property) { FactoryGirl.build(:property) }
 
   before do
     login_user(user)

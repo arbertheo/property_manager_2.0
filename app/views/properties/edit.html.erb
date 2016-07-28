@@ -1,0 +1,35 @@
+<div class="medium-4 medium-centered">
+    <h6><%= @property.address %></h6>
+
+    <%= form_for @property do |f| %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+
+    <%= f.label :unit_id %>
+    <%= f.text_field :unit_id %>
+
+    <%= f.label :rent_amount %>
+    <%= f.text_field :rent_amount %>
+
+    <%= f.label :number_of_rooms %>
+    <%= f.text_field :number_of_rooms %>
+
+    <%= f.label :pet_friendly %>
+    <%= f.text_field :pet_friendly %>
+
+    <%= f.label :occupied_or_not %>
+    <%= f.text_field :occupied_or_not %>
+
+    <%= f.label :rent_deposit %>
+    <%= f.text_field :rent_deposit %>
+
+    <%= f.label :begining_of_lease_date %>
+    <%= f.text_field :begining_of_lease_date %>
+
+    <%= f.label :end_of_lease_date%>
+    <%= f.text_field :end_of_lease_date %>
+
+
+    <%= f.submit "Add Property" %>
+
+    <% end %>

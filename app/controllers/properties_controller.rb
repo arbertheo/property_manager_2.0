@@ -14,6 +14,33 @@ class PropertiesController < ApplicationController
     @property = Property.new
   end
 
+  def update
+    @property = Property.find(params[:id])
+    if @property.update(property_params)
+      flash[:success] = 'Property saved successfully'
+      redirect_to property_path(@property)
+    else
+      flash[:alert] = 'Problems updating property'
+      @errors = @property.errors.full_messages
+      render :edit
+    end
+  end
+
+  def destroy
+    @property = property.find(params[:id])
+    if @property.destroy
+      flash[:success] = 'Property deleted successfully'
+      redirect_to property_path
+    else
+      flash[:alert] = 'Problems deleting property'
+      redirect_to property_path(@property)
+    end
+  end
+
+  def edit
+    @property = Property.find(params[:id])
+  end
+
   def create
     @property = Property.new(property_params)
 

@@ -14,10 +14,10 @@ feature 'User signs out', %{
 
     click_button 'Log in'
 
-    expect(page).to have_content I18n.t 'devise.sessions.signed_in'
+    expect(page).to have_content 'Signed in successfully.'
 
-    click_link 'Sign Out'
+    click_button 'Sign out'
 
-    expect(page).to have_content I18n.t 'devise.sessions.signed_out'
+    expect(page).to have_content  'Signed out successfully.'
   end
 end
